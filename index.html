@@ -245,7 +245,7 @@ function render(){
   secTitle.textContent=cat.label; secSub.textContent=cat.sub;
   [...tabsInner.children].forEach(b=>b.classList.toggle('active', b.dataset.cat===current));
   var _s=document.querySelector('.search');
-  if(cat.iframe){ if(_s)_s.style.display='none'; feed.className=''; feed.innerHTML='<div class="cabbar"><span class="cabhint">Aperçu de notre site — pour tout consulter (Accueil, Notre équipe…), ouvrez-le en plein écran.</span><a class="cabopen" href="'+cat.iframe+'" target="_blank" rel="noopener">Ouvrir le site ↗</a></div><iframe class="cabframe" src="'+cat.iframe+'" title="Actualites VISAEC" loading="lazy"></iframe>'; return; }
+  if(cat.iframe){ if(_s)_s.style.display='none'; feed.className=''; feed.innerHTML='<div class="cabbar"><span class="cabhint">Une page s’affiche en erreur ? Cliquez « Ouvrir le site ↗ » pour aller directement sur le site, puis rechargez cette page.</span><a class="cabopen" href="'+cat.iframe+'" target="_blank" rel="noopener">Ouvrir le site ↗</a></div><iframe class="cabframe" src="'+cat.iframe+'" title="Actualites VISAEC" loading="lazy"></iframe>'; return; }
   if(_s)_s.style.display=''; feed.className='feed';
   let items=(window.VEILLE_DATA||[]).filter(a=>a.categorie===current);
   if(query){ const q=query.toLowerCase(); items=items.filter(a=>(a.titre+' '+a.resume+' '+a.source).toLowerCase().includes(q)); }
